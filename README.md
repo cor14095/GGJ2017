@@ -25,9 +25,9 @@ We're a group of young game fans and decide to participate in our first GGJ. I t
 * **Joshua** - *Programmer, light mechanics* - [JoshF8](https://github.com/JoshF8).
 * **Freddie Batlle** - *Programmer, random map generation* - [adriano515](https://github.com/adriano515).
 * **Alejandro Cortés** - *Programmer, Game controls and camera* - [cor14095](https://github.com/cor14095).
-* ** Moy ** - *Texture designer*.
-* ** Axel ** - *Assets designer*.
-* ** Diego ** - *Sound and ambient design*.
+* **Moy** - *Texture designer*.
+* **Axel** - *Assets designer*.
+* **Diego** - *Sound and ambient design*.
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
