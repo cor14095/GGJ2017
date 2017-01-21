@@ -11,8 +11,8 @@ public class ActivarTrampa : MonoBehaviour {
         animador = GetComponent<Animator>();
 	}
 
-    void OnCollisionEnter(Collision collision) {
-        if (colision.tag == "Player"){
+    void OnTriggerEnter(Collider collision) {
+        if (collision.tag == "Player"){
             animador.SetBool("Trampa", true);
         }
     }
