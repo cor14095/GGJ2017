@@ -9,11 +9,12 @@ We're a group of young game fans and decide to participate in our first GGJ. I t
 ### Game tester:
 * Download the .exe file from the rep.
 * Run it.
-* (Hopefully) Have some fun!
+* Hopefully, have some fun.
+
 ### Coder:
 * Download the repo.
 * Download or install Unity 5.4.x.
-* Run Unity and select "Open proyect".
+* Run Unity and select "Open project".
 * Have fun!
 
 ## Built With
@@ -23,8 +24,10 @@ We're a group of young game fans and decide to participate in our first GGJ. I t
 
 * **Joshua** - *Programmer, light mechanics* - [JoshF8](https://github.com/JoshF8).
 * **Freddie Batlle** - *Programmer, random map generation* - [adriano515](https://github.com/adriano515).
-* **Alejandro Cortés** - *Programmer, Game controlls and cammera* - [cor14095](https://github.com/cor14095).
-* Other pending to be added...
+* **Alejandro Cortés** - *Programmer, Game controls and camera* - [cor14095](https://github.com/cor14095).
+* ** Moy ** - *Texture designer*.
+* ** Axel ** - *Assets designer*.
+* ** Diego ** - *Sound and ambient design*.
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
