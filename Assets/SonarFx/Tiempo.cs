@@ -8,7 +8,7 @@ public class Tiempo : MonoBehaviour {
     bool cuenta = false;
     float tiempores = 0f;
     public Object luz;
-
+	public Camera camara;
 
 	// Use this for initialization
 	void Awake() {
@@ -25,8 +25,8 @@ public class Tiempo : MonoBehaviour {
             tiempores = tiempo;
             sonar.enabled = true;
             Vector3 mousePos = Input.mousePosition;
-            mousePos.z += 50;
-            Vector3 mousePosWorld = Camera.main.ScreenToWorldPoint(mousePos);
+            mousePos.z += 110;
+			Vector3 mousePosWorld = camara.ScreenToWorldPoint(mousePos);
             posicion = new Vector3(mousePosWorld.x, 0, mousePosWorld.z);
             Instantiate(luz, posicion+ new Vector3(0,50,0), Quaternion.identity, this.transform);
             sonar.posicion = posicion;

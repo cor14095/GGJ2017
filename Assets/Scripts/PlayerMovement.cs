@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
 	void Start()
 	{
-        Cursor.lockState = CursorLockMode.Locked;
+       // Cursor.lockState = CursorLockMode.Locked;
 
 	}
 
@@ -24,15 +24,12 @@ public class PlayerMovement : MonoBehaviour
 	{
 		//rotation
 
-		float rotLeftRight = Input.GetAxis ("Mouse X")*rotVelocity;
+		float rotLeftRight = Input.GetAxis ("HorizontalRotation")*rotVelocity;
 
 		transform.Rotate (0, rotLeftRight, 0);
 		//up/down
 
-		verticalRotation -= Input.GetAxis ("Mouse Y") * rotVelocity;
-		verticalRotation = Mathf.Clamp (verticalRotation, -upDownMax, upDownMax);
 
-		cam.transform.localRotation = Quaternion.Euler(verticalRotation,0,0);
 
 		//movement
 
