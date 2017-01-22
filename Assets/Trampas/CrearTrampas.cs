@@ -33,6 +33,7 @@ public class CrearTrampas : MonoBehaviour {
                 }
                 if(generadores[numero + (8*masmenos)][1] == 0){
                     trampasactivas++;
+                    generadores[numero][1] = 1;
                     Instantiate(trampas[Random.Range(0, 2)], creadores[numero].transform.position, Quaternion.identity);
                 }
             }

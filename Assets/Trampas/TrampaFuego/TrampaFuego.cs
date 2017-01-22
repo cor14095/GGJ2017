@@ -5,7 +5,7 @@ public class TrampaFuego : MonoBehaviour {
     public GameObject fogata;
 	// Use this for initialization
 	void Start () {
-        Instantiate(fogata, transform.position, Quaternion.identity, transform);
+        
 	}
 	
 
