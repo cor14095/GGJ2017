@@ -28,7 +28,11 @@ public class MapGen : MonoBehaviour {
 		float x = Random.Range (-border+cubeX, border-cubeX);	
 		float z = Random.Range (-border+cubeX, border-cubeX);
 		GameObject cube1 = (GameObject)Instantiate (cube, new Vector3 (x, cubeX, z),Quaternion.identity);
+
 		cube1.transform.parent= cubesHolder.transform;
+
 			
 	}
+
+
 }
