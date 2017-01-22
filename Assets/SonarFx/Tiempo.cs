@@ -9,6 +9,7 @@ public class Tiempo : MonoBehaviour {
     float tiempores = 0f;
     public Object luz;
 	public Camera camara;
+	public float clicks = 100f;
 
 	// Use this for initialization
 	void Awake() {
@@ -20,31 +21,53 @@ public class Tiempo : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetMouseButtonUp (0)) {
-			GetComponent<SonarFx> ().waveColor = new Color32(0xEF,0xBA,0x3E,0x00);
-			cuenta = true;
-			tiempores = tiempo;
-			sonar.enabled = true;
-			Vector3 mousePos = Input.mousePosition;
-			mousePos.z += 110;
-			Vector3 mousePosWorld = camara.ScreenToWorldPoint (mousePos);
-			posicion = new Vector3 (mousePosWorld.x, 0, mousePosWorld.z);
-			Instantiate (luz, posicion + new Vector3 (0, 50, 0), Quaternion.identity, this.transform);
-			sonar.posicion = posicion;
-           
-		} else if (Input.GetMouseButton (1)) {
-			GetComponent<SonarFx> ().waveColor = new Color32(0x43,0xBE,0xE4,0x00);
-			cuenta = true;
-			tiempores = tiempo;
-			sonar.enabled = true;
-			Vector3 mousePos = Input.mousePosition;
-			mousePos.z += 110;
-			Vector3 mousePosWorld = camara.ScreenToWorldPoint (mousePos);
-			posicion = new Vector3 (mousePosWorld.x, 0, mousePosWorld.z);
-			Instantiate (luz, posicion + new Vector3 (0, 50, 0), Quaternion.identity, this.transform);
-			sonar.posicion = posicion;
+			
+			if (clicks >= 20f) {
+				clicks = clicks - 20f;
+				GetComponent<SonarFx> ().waveColor = new Color32 (0xEF, 0xBA, 0x3E, 0x00);
+				cuenta = true;
+				tiempores = tiempo;
+				sonar.enabled = true;
+				Vector3 mousePos = Input.mousePosition;
+				mousePos.z += 110;
+				Vector3 mousePosWorld = camara.ScreenToWorldPoint (mousePos);
+				posicion = new Vector3 (mousePosWorld.x, 0, mousePosWorld.z);
+				Instantiate (luz, posicion + new Vector3 (0, 50, 0), Quaternion.identity, this.transform);
+				sonar.posicion = posicion;
+			} 
+	           
+		} else if (Input.GetMouseButtonUp (1)) {
+
+			if (clicks >= 40f) {
+				
+				clicks = clicks - 40f;
+				GetComponent<SonarFx> ().waveColor = new Color32 (0x43, 0xBE, 0xE4, 0x00);
+				cuenta = true;
+				tiempores = tiempo;
+				sonar.enabled = true;
+				Vector3 mousePos = Input.mousePosition;
+				mousePos.z += 110;
+				Vector3 mousePosWorld = camara.ScreenToWorldPoint (mousePos);
+				posicion = new Vector3 (mousePosWorld.x, 0, mousePosWorld.z);
+				Instantiate (luz, posicion + new Vector3 (0, 50, 0), Quaternion.identity, this.transform);
+				sonar.posicion = posicion;
+			} 
 		}
+		//Debug.Log ("Clicks" + clicks);
+
+		else if (clicks > 100f)
+			clicks = 100f;
+			
+
         if (cuenta == true){
             if (tiempores > 0){
+				if (clicks < 100f){
+					if ((GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerMovement> ().forward != 0) || (GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerMovement> ().side != 0)) {
+						clicks += 0.13f;
+
+					}
+
+				}	
                 tiempores -= Time.deltaTime;
             }else{
                 sonar.enabled = false;

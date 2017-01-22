@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
 	public GameObject cam;
 
 	private PlayMode idle;
+	public float forward;
+	public float side;
 
 
 
@@ -23,7 +25,8 @@ public class PlayerMovement : MonoBehaviour
 	void Update() 
 	{
 		//rotation
-
+		forward=0f;
+		side = 0f;
 		float rotLeftRight = Input.GetAxis ("HorizontalRotation")*rotVelocity;
 
 		transform.Rotate (0, rotLeftRight, 0);
@@ -40,8 +43,8 @@ public class PlayerMovement : MonoBehaviour
 		
 			movVelocity = 6f;
 		}
-		float forward = Input.GetAxis("Vertical") * movVelocity;
-		float side = Input.GetAxis("Horizontal")*movVelocity;
+		forward = Input.GetAxis("Vertical") * movVelocity;
+		side = Input.GetAxis("Horizontal")*movVelocity;
 
 		Vector3 speed = new Vector3(side,0,forward);
 		speed = transform.rotation * speed;
