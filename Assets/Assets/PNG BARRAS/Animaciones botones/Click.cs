@@ -37,9 +37,12 @@ public class Click : MonoBehaviour {
     }
 
     void Botones(int valor) {
-        if (boton == 0) {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+		if (boton == 0) {
+			UnityEngine.SceneManagement.SceneManager.LoadScene (1);
 
-        }
-    }
+		}
+		if (boton == 2) {
+			Application.Quit ();
+		}
+	}
 }
