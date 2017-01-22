@@ -36,8 +36,6 @@ public class Timer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timeLeft = timeLeft - Time.deltaTime;
-
-		Debug.Log (barDisplay);
 		barDisplay = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Tiempo> ().clicks * 0.01f;
 	}
 }
