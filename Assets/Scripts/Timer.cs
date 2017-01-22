@@ -37,5 +37,8 @@ public class Timer : MonoBehaviour {
 	void Update () {
 		timeLeft = timeLeft - Time.deltaTime;
 		barDisplay = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Tiempo> ().clicks * 0.01f;
+        if (timeLeft <= 0) {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+        }
 	}
 }
