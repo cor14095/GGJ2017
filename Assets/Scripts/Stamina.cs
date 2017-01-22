@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Stamina : MonoBehaviour {
 
-	Vector2 position = new Vector2(460,800);
+	Vector2 position = new Vector2(20,300);
 	Vector2 size = new Vector2(200,50);
 	public GUIStyle progressBarEmpty;
 	public GUIStyle progressBarFull;
