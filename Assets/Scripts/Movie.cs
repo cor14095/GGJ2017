@@ -12,6 +12,7 @@ public class Movie : MonoBehaviour {
 	void Start () {
 		GetComponent<RawImage> ().texture = movie as MovieTexture;
 		audio = GetComponent<AudioSource> ();
+		audio.pitch /= 5f;
 		audio.clip = movie.audioClip;
 		movie.Play ();
 		audio.Play ();

@@ -7,7 +7,8 @@ public class Tiempo : MonoBehaviour {
     SonarFx sonar;
     bool cuenta = false;
     float tiempores = 0f;
-    public Object luz;
+	public GameObject sound2;
+	public GameObject sound1;
 	public Camera camara;
 	public float clicks = 100f;
 	float movVert;
@@ -39,6 +40,8 @@ public class Tiempo : MonoBehaviour {
 				}	
 				tiempores -= Time.deltaTime;
 			} else {
+				
+
 				sonar.enabled = false;
 				cuenta = false;
 			}
@@ -47,6 +50,7 @@ public class Tiempo : MonoBehaviour {
 				tiempores = tiempo1;
 				if (tiempores > 0) {
 					tiempores -= Time.deltaTime;
+
 				} else {
 					ComprobarMouse ();
 				}        
@@ -67,7 +71,8 @@ public class Tiempo : MonoBehaviour {
 					mousePos.z += 110;
 					Vector3 mousePosWorld = camara.ScreenToWorldPoint (mousePos);
 					posicion = new Vector3 (mousePosWorld.x, 0, mousePosWorld.z);
-					//Instantiate (luz, posicion + new Vector3 (0, 50, 0), Quaternion.identity, this.transform);
+					Destroy(Instantiate (sound1, posicion, Quaternion.identity),3);
+
 					sonar.posicion = posicion;
 				} 
 
@@ -84,7 +89,7 @@ public class Tiempo : MonoBehaviour {
 					mousePos.z += 110;
 					Vector3 mousePosWorld = camara.ScreenToWorldPoint (mousePos);
 					posicion = new Vector3 (mousePosWorld.x, 0, mousePosWorld.z);
-					//Instantiate (luz, posicion + new Vector3 (0, 50, 0), Quaternion.identity, this.transform);
+					Destroy(Instantiate (sound2, posicion, Quaternion.identity),3);
 					sonar.posicion = posicion;
 				} 
 			}
