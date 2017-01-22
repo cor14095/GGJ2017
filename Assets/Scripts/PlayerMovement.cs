@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
-	public float movVelocity = 3f;
+	public float movVelocity = 6f;
 	public float rotVelocity = 3f;
 	float verticalRotation = 0; 
 	public float upDownMax = 60.0f;
@@ -32,7 +32,14 @@ public class PlayerMovement : MonoBehaviour
 
 
 		//movement
+		if (Input.GetAxis ("Run")==1) {
 
+			movVelocity = 12f;
+		
+		} else {
+		
+			movVelocity = 6f;
+		}
 		float forward = Input.GetAxis("Vertical") * movVelocity;
 		float side = Input.GetAxis("Horizontal")*movVelocity;
 
