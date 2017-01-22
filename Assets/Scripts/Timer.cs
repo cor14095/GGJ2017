@@ -14,7 +14,7 @@ public class Timer : MonoBehaviour {
 	public GUIStyle progressBarFull;
 	public Texture2D emptyTex;
 	public Texture2D fullTex;
-	float barDisplay = 0.5f;
+	float barDisplay = 1f;
 
 	// Use this for initialization
 	void OnGUI () {

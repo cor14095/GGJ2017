@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
 	private PlayMode idle;
 	public float forward;
 	public float side;
-
+	public float stamina = 1f;
 
 
 	void Start()
@@ -24,23 +24,26 @@ public class PlayerMovement : MonoBehaviour
 
 	void Update() 
 	{
+		
 		//rotation
 		forward=0f;
 		side = 0f;
+
 		float rotLeftRight = Input.GetAxis ("HorizontalRotation")*rotVelocity;
 
 		transform.Rotate (0, rotLeftRight, 0);
 		//up/down
 
-
+		if (stamina > 1f)
+			stamina = 1f;
 
 		//movement
-		if (Input.GetAxis ("Run")==1) {
-
+		if (Input.GetAxis ("Run")==1 && stamina> 0f) {
+			stamina -= Time.deltaTime * 0.5f;
 			movVelocity = 12f;
 		
-		} else {
-		
+		} else if(stamina<1f) {
+			stamina += Time.deltaTime * 0.08f;
 			movVelocity = 6f;
 		}
 		forward = Input.GetAxis("Vertical") * movVelocity;

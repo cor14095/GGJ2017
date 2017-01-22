@@ -10,6 +10,8 @@ public class Tiempo : MonoBehaviour {
     public Object luz;
 	public Camera camara;
 	public float clicks = 100f;
+	float movVert;
+	float movHor;
 
 	// Use this for initialization
 	void Awake() {
@@ -30,8 +32,10 @@ public class Tiempo : MonoBehaviour {
 		if (cuenta == true) {
 			if (tiempores > 0) {
 				if (clicks < 100f) {
-					if ((GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerMovement> ().forward != 0) || (GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerMovement> ().side != 0)) {
-						clicks += 0.13f;
+					movHor = Input.GetAxis ("Horizontal");
+					movVert = Input.GetAxis ("Vertical");
+						if (movVert == 1 || movVert == -1 || movHor ==1 || movHor ==-1) {
+						clicks += 0.17f;
 
 					}
 
@@ -54,7 +58,7 @@ public class Tiempo : MonoBehaviour {
 					mousePos.z += 110;
 					Vector3 mousePosWorld = camara.ScreenToWorldPoint (mousePos);
 					posicion = new Vector3 (mousePosWorld.x, 0, mousePosWorld.z);
-					Instantiate (luz, posicion + new Vector3 (0, 50, 0), Quaternion.identity, this.transform);
+					//Instantiate (luz, posicion + new Vector3 (0, 50, 0), Quaternion.identity, this.transform);
 					sonar.posicion = posicion;
 				} 
 
@@ -71,7 +75,7 @@ public class Tiempo : MonoBehaviour {
 					mousePos.z += 110;
 					Vector3 mousePosWorld = camara.ScreenToWorldPoint (mousePos);
 					posicion = new Vector3 (mousePosWorld.x, 0, mousePosWorld.z);
-					Instantiate (luz, posicion + new Vector3 (0, 50, 0), Quaternion.identity, this.transform);
+					//Instantiate (luz, posicion + new Vector3 (0, 50, 0), Quaternion.identity, this.transform);
 					sonar.posicion = posicion;
 				} 
 			}
