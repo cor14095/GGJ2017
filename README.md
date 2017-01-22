@@ -30,7 +30,7 @@ We're a group of young game fans and we decided to participate in our first GGJ.
 * **Alejandro Cortés** - *Programmer, Game controls and camera* - [cor14095](https://github.com/cor14095).
 * **Moises** - *Texture designer and beta tester*. - [Mobarys](https://github.com/Mobarys).
 * **Axel** - *Assets and model designer* - [AxelNamikaze](https://github.com/AxelNamikaze).
-* **Diego** - *Sound and logo design*. - [DiegoLeonel](https://github.com/DiegoLeonel).
+* **Diego** - *Sound and 2D designer*. - [DiegoLeonel](https://github.com/DiegoLeonel).
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
