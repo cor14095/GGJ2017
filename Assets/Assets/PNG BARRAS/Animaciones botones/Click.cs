@@ -38,7 +38,8 @@ public class Click : MonoBehaviour {
 
     void Botones(int valor) {
         if (boton == 0) {
-            Application.LoadLevel(1);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+
         }
     }
 }
