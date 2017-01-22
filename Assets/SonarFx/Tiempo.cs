@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Tiempo : MonoBehaviour {
-    public float tiempo = 0f;
+    public float tiempo = 0f,tiempo1 = 0f;
     public Vector3 posicion;
     SonarFx sonar;
     bool cuenta = false;
@@ -14,7 +14,6 @@ public class Tiempo : MonoBehaviour {
 	void Awake() {
         sonar = GetComponent<SonarFx>();
         sonar.enabled = false;
-       
 	}
 	
 	// Update is called once per frame
@@ -52,7 +51,19 @@ public class Tiempo : MonoBehaviour {
             }
         }
         else {
-            if (Input.GetMouseButtonUp(0))
+            if(Application.loadedLevel == 0){
+                tiempores = tiempo1;
+                if (tiempores > 0){
+                    tiempores -= Time.deltaTime;
+                }else{
+                    ComprobarMouse();
+                }        
+            }
+           ComprobarMouse();
+        }}
+        
+        void ComprobarMouse(){
+         if (Input.GetMouseButtonUp(0))
             {
                 GetComponent<SonarFx>().waveColor = new Color32(0xEF, 0xBA, 0x3E, 0x00);
                 cuenta = true;
@@ -80,7 +91,5 @@ public class Tiempo : MonoBehaviour {
                 sonar.posicion = posicion;
             }
         }
-        
 
 	}
-}
