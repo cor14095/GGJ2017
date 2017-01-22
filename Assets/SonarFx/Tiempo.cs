@@ -31,7 +31,7 @@ public class Tiempo : MonoBehaviour {
 				if (clicks < 100f) {
 					movHor = Input.GetAxis ("Horizontal");
 					movVert = Input.GetAxis ("Vertical");
-						if (movVert == 1 || movVert == -1 || movHor ==1 || movHor ==-1) {
+					if (movVert == 1 || movVert == -1 || movHor == 1 || movHor == -1) {
 						clicks += 0.17f;
 
 					}
@@ -43,6 +43,18 @@ public class Tiempo : MonoBehaviour {
 				cuenta = false;
 			}
 		} else {
+			if (Application.loadedLevel == 0) {
+				tiempores = tiempo1;
+				if (tiempores > 0) {
+					tiempores -= Time.deltaTime;
+				} else {
+					ComprobarMouse ();
+				}        
+			}
+			ComprobarMouse ();
+		}}
+     
+	     void ComprobarMouse(){
 			if (Input.GetMouseButtonUp (0)) {
 
 				if (clicks >= 20f) {
@@ -79,4 +91,4 @@ public class Tiempo : MonoBehaviour {
 		}
 
 	}
-}
+
