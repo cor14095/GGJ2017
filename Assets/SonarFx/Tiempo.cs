@@ -19,7 +19,7 @@ public class Tiempo : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetMouseButtonUp (0)) {
+		/*if (Input.GetMouseButtonUp (0)) {
 			GetComponent<SonarFx> ().waveColor = new Color32(0xEF,0xBA,0x3E,0x00);
 			cuenta = true;
 			tiempores = tiempo;
@@ -42,13 +42,42 @@ public class Tiempo : MonoBehaviour {
 			posicion = new Vector3 (mousePosWorld.x, 0, mousePosWorld.z);
 			Instantiate (luz, posicion + new Vector3 (0, 50, 0), Quaternion.identity, this.transform);
 			sonar.posicion = posicion;
-		}
+		}*/
         if (cuenta == true){
             if (tiempores > 0){
                 tiempores -= Time.deltaTime;
             }else{
                 sonar.enabled = false;
                 cuenta = false;
+            }
+        }
+        else {
+            if (Input.GetMouseButtonUp(0))
+            {
+                GetComponent<SonarFx>().waveColor = new Color32(0xEF, 0xBA, 0x3E, 0x00);
+                cuenta = true;
+                tiempores = tiempo;
+                sonar.enabled = true;
+                Vector3 mousePos = Input.mousePosition;
+                mousePos.z += 110;
+                Vector3 mousePosWorld = camara.ScreenToWorldPoint(mousePos);
+                posicion = new Vector3(mousePosWorld.x, 0, mousePosWorld.z);
+                Instantiate(luz, posicion + new Vector3(0, 50, 0), Quaternion.identity, this.transform);
+                sonar.posicion = posicion;
+
+            }
+            else if (Input.GetMouseButton(1))
+            {
+                GetComponent<SonarFx>().waveColor = new Color32(0x43, 0xBE, 0xE4, 0x00);
+                cuenta = true;
+                tiempores = tiempo;
+                sonar.enabled = true;
+                Vector3 mousePos = Input.mousePosition;
+                mousePos.z += 110;
+                Vector3 mousePosWorld = camara.ScreenToWorldPoint(mousePos);
+                posicion = new Vector3(mousePosWorld.x, 0, mousePosWorld.z);
+                Instantiate(luz, posicion + new Vector3(0, 50, 0), Quaternion.identity, this.transform);
+                sonar.posicion = posicion;
             }
         }
         
