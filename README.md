@@ -1,6 +1,8 @@
 # GGJ2017 - Biosonic Escape
 ## The game:
 Global Game Jam 2017 project worked in unity. 
+
+
 Biosonic Escape is a cooperative game between two players. The game is about a prisoner soldier, blinded after torture, trying to escape from an underground prison with the help of an old ally. He can perceive the world around him by means of the *sound waves* that his ally produces. 
 
 ## Motivation:
